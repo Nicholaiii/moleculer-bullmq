@@ -5,6 +5,7 @@ export default defineBuildConfig({
   entries: [
     './src/index'
   ],
+  externals: ['moleculer'],
   rollup: {
     cjsBridge: true,
     emitCJS: true

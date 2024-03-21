@@ -1,5 +1,4 @@
-import { ActionSchema, Cacher, Cachers, RedisCacherOptions, Service, ServiceSchema, ServiceSettingSchema } from 'moleculer'
-import type Redis from 'ioredis'
+import type {  Cachers, Service, ServiceSchema, ServiceSettingSchema } from 'moleculer'
 
 import { Errors } from 'moleculer'
 import { ConnectionOptions, Queue, QueueEvents, Worker } from 'bullmq'
