@@ -1,0 +1,36 @@
+{
+  "name": "@nicholai/moleculer-bullmq",
+  "version": "0.1.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "unbuild",
+    "test": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "bullmq": "^5.4.4",
+    "dotenv": "^16.4.5",
+    "ioredis": "^5.3.2",
+    "moleculer": "^0.14.32",
+    "redis-memory-server": "^0.10.0",
+    "typescript": "^5.4.3",
+    "unbuild": "^2.0.0",
+    "vitest": "^1.4.0"
+  },
+  "peerDependencies": {
+    "bullmq": "^5.4.4"
+  }
+}

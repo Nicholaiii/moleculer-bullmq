@@ -1,0 +1,17 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [
+        "en-GB",
+        "npm"
+    ],
+    "words": [
+        "bullmq",
+        "cacher",
+        "moleculer",
+        "nicholai"
+    ],
+    "ignoreWords": [],
+    "import": []
+}
