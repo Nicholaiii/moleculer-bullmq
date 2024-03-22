@@ -63,10 +63,11 @@ export const createBullMQMixin = (): BullMQMixin => {
         'bullmq.redis': this.settings.bullmq?.redis,
         'broker.cacher': this.broker.cacher
       })
+
       const queueActions = Object
-      .entries(this.schema.actions ?? {})
-      .filter(([,v]) => typeof v === 'object' && v.queue)
-      .map(([k]) => k )
+        .entries(this.schema.actions ?? {})
+        .filter(([,v]) => typeof v === 'object' && v.queue)
+        .map(([k]) => k )
 
       worker = new Worker(queue, async ({ id, name, data }) => {
         if (!queueActions.includes(name)) throw new Error(`No queue-able ${name} action registered on ${queue}`)
