@@ -1,6 +1,6 @@
 import type {  Cachers, Service, ServiceSchema, ServiceSettingSchema } from 'moleculer'
 
-import { Errors } from 'moleculer'
+import Moleculer, { Errors } from 'moleculer'
 import { ConnectionOptions, Queue, QueueEvents, Worker } from 'bullmq'
 import { mapOver } from './function'
 
@@ -11,7 +11,7 @@ export type BullMQMixinSettingsSchema = {
   bullmq?: BullMQMixinSettings
 }
 export type BullMQMethods = {
-  queue: (name: string) => Queue<any, any, string>
+  queue: <T, R = any, N extends string = string>(name: string) => Queue<{ params: T, meta?: Moleculer.CallingOptions['meta'] }, R, N>
   queueEvents: (name: string) => QueueEvents
 }
 
@@ -42,7 +42,7 @@ export const createBullMQMixin = (): BullMQMixin => {
   (name: string) => map.get(name) ?? map.set(name, new ctor(name, { connection })).get(name)!
 
   const methods: BullMQMethods = {
-    queue: getOrCreate(Queue)(queues),
+    queue: getOrCreate(Queue)(queues) as BullMQMethods['queue'],
     queueEvents: getOrCreate(QueueEvents)(queueEvents)
   }
 

@@ -52,7 +52,7 @@ describe('Bullmq Mixin', async () => {
 
   it('allows adding to a queue', async () => {
     const service = createService('add-to-queue')
-    await service.queue('add-to-queue').add('test', { foo: 'bar' })
+    await service.queue('add-to-queue').add('test', { params: 'foo' })
     expect(
       service.queue('add-to-queue').getJobCounts()
     ).resolves.toHaveProperty('active', 1)
