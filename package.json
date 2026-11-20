@@ -28,7 +28,7 @@
     "redis-memory-server": "^0.10.0",
     "typescript": "^5.4.3",
     "unbuild": "^2.0.0",
-    "vitest": "^1.4.0"
+    "vitest": "^5.0.0"
   },
   "peerDependencies": {
     "bullmq": "^5.4.4"
